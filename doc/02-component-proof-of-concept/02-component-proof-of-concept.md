@@ -108,7 +108,12 @@ do good work.
 
 <!-- TODO: briefly argue your choice of design or design something
 new; then delete this comment -->
-
+My choice of design is to design a banking account. My idea is that a banking
+account should have the ability to extract and deposit money. So, a kernel method
+for extract and deposit must require. There are also a lot of other component
+for a banking account. For example, we should protect the information inside the
+banking account. So, when seting up a account you must include a lot of user
+information like their name and password.
 
 
 > Once you've argued your choice of design, make a branch in your new repo called
