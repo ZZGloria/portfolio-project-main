@@ -78,7 +78,7 @@ public class BankAccount{
 
     public final boolean checkPassWord(int pass){
         assert 100000 <= password : "Violation of password need to be at least 6 digit";
-        assert 10000000 >= password : "Violation of password need to be at most 8 digit";
+        assert 99999999 >= password : "Violation of password need to be at most 8 digit";
 
         return pass==this.password;
     }
