@@ -47,9 +47,9 @@ public interface BankAccountKernel extends Standard<BankAccount> {
      * @updates this
      * @requires {this.money >= k}
      * @ensures this = #this - k
+     * @return this.money
      */
     double subtract(double k);
-
 
     /**
      * add {@code this.money} by {@code k} .
@@ -59,9 +59,9 @@ public interface BankAccountKernel extends Standard<BankAccount> {
      * @updates this
      * @requires {@code k >= 0}
      * @ensures this = #this + k
+     * @return this.money
      */
     double add(double k);
-
 
     /**
      * check whether the input {@code pass} match {@code this.password}
@@ -74,8 +74,6 @@ public interface BankAccountKernel extends Standard<BankAccount> {
      */
     boolean checkPassWord(int pass);
 
-
-
     /**
      * check whether the input {@code firstName} match {@code this.FirstName}
      *
@@ -87,7 +85,6 @@ public interface BankAccountKernel extends Standard<BankAccount> {
      */
     boolean checkFirstName(String firstName);
 
-
     /**
      * check whether the input {@code LastName} match {@code this.LastName}
      *
@@ -97,11 +94,20 @@ public interface BankAccountKernel extends Standard<BankAccount> {
      * @ensures LastName.equals(this.LastName)
      * @return true if LastName matches this.LastName, false otherwise
      */
-    boolean checkLastName(String LastName)
+    boolean checkLastName(String LastName);
 
+    /**
+     * return the lastName
+     *
+     * @return this.lastName
+     */
+    String LastName();
 
-
-
-
+    /**
+     * return the firstName
+     *
+     * @return this.firstName
+     */
+    String firstName();
 
 }

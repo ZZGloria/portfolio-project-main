@@ -24,7 +24,7 @@ public class BankAccount{
 
     private String lastName;
 
-    private String password;
+    private int password;
 
 
     /**
@@ -36,7 +36,7 @@ public class BankAccount{
         this.money = 0;
         this.firstName=null;
         this.lastName=null;
-        this.password=null;
+        this.password=0;
 
     }
 
@@ -53,7 +53,7 @@ public class BankAccount{
         this.createNewRep();
         this.firstName=FirstName.toLowerCase();
         this.lastName=LastName.toLowerCase();
-        this.password=password;
+        this.password= password;
 
     }
 
@@ -102,7 +102,7 @@ public class BankAccount{
 
 public class MyClass {
     public static void main(String[] args) {
-        BankAccount myAccount = new BankAccount(Gloria, Zhong, 123456);
+        BankAccount myAccount = new BankAccount("Gloria", "Zhong", 123456);
 
         System.out.println(myAccount.deposit(100));
     }
