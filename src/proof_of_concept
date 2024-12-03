@@ -1,0 +1,110 @@
+/**
+ * {@code BankAccount} represented as a {@code double} with implementations of
+ * primary methods.
+ *
+ * @convention <pre>
+ * [all characters of $this.rep are '0' through '9']
+ * </pre>
+ * @correspondence <pre>
+ * this = [if $this.rep = "" then 0
+ *         else the decimal number whose ordinary depiction is $this.rep]
+ * </pre>
+ *
+ * @author Gloria Zhong,
+ *
+ */
+public class BankAccount{
+
+    /**
+     * Representation of {@code this}.
+     */
+    private double money;
+
+    private String firstName;
+
+    private String lastName;
+
+    private int password;
+
+
+    /**
+     * Creator of initial representation.
+     */
+    private void createNewRep() {
+
+        // TODO - fill in body
+        this.money = 0;
+        this.firstName=null;
+        this.lastName=null;
+        this.password=0;
+
+    }
+
+    /*
+     * Constructors -----------------------------------------------------------
+     */
+
+    public BankAccount(String FirstName,String LastName,int password) {
+        assert FirstName != null : "Violation of: FirstName is not null";
+        assert LastName != null : "Violation of: LastName is not null";
+        assert 100000 <= password : "Violation of password need to be at least 6 digit";
+        assert 10000000 >= password : "Violation of password need to be at most 8 digit";
+
+        this.createNewRep();
+        this.firstName=FirstName.toLowerCase();
+        this.lastName=LastName.toLowerCase();
+        this.password= password;
+
+    }
+
+
+    /*
+     * Kernel methods ---------------------------------------------------------
+     */
+
+
+     public final double extract(double k) {
+        assert this.money >= k : "Violation of: this.money >= k";
+
+        this.money-=k;
+        return this.money;
+
+    }
+
+    public final double deposit(double k){
+        this.money+=k;
+        return this.money;
+    }
+
+    public final boolean checkPassWord(int pass){
+        assert 100000 <= password : "Violation of password need to be at least 6 digit";
+        assert 99999999 >= password : "Violation of password need to be at most 8 digit";
+
+        return pass==this.password;
+    }
+
+    public final boolean checkFirstName(String firstName){
+        assert firstName != null : "Violation of: FirstName is not null";
+
+        return (firstName.toLowerCase()).equals(this.firstName);
+
+    }
+
+    public final boolean checkLastName(String LastName){
+        assert LastName != null : "Violation of: LastName is not null";
+
+        return (LastName.toLowerCase()).equals(this.lastName);
+
+    }
+
+
+}
+
+public class MyClass {
+    public static void main(String[] args) {
+        BankAccount myAccount = new BankAccount("Gloria", "Zhong", 123456);
+
+        System.out.println(myAccount.deposit(100));
+    }
+}
+
