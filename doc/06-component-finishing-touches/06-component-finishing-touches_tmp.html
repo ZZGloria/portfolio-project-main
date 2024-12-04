@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>05-component-kernel-implementation.md</title>
+<title>06-component-finishing-touches.md</title>
 <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
 
 <style>
@@ -392,40 +392,53 @@ code {
           : 'default'
     });
   </script>
-<h1 id="portfolio-part-5-kernel-implementation">Portfolio Part 5: Kernel Implementation</h1>
+<h1 id="portfolio-part-6-finishing-touches">Portfolio Part 6: Finishing Touches</h1>
 <ul>
 <li><strong>Name</strong>: Gloria Zhong</li>
 <li><strong>Dot Number</strong>: zhong.733</li>
-<li><strong>Due Date</strong>:11/15/2024</li>
+<li><strong>Due Date</strong>: 12/4/2024</li>
 </ul>
 <h2 id="assignment-overview">Assignment Overview</h2>
-<p>At this point in the portfolio project, the only thing left as far as
-implementation is concerned is the kernel implementation. Therefore, you can
-treat this final formative assessment as kernel implementation practice. In
-other words, assuming that all the other pieces are in order, your job is to
-complete a kernel implementation, just like you've done so many times already.</p>
-<p>In keeping with the software sequence discipline, you should create the final
-class in the form of <code>Component#</code>, where <code>Component</code> is the name of your
-component and <code>#</code> is the number of your implementation. For example, using
-NaturalNumber, our kernel implementation might be called <code>NaturalNumber1L</code>. Note
-that by convention, we use the letter <code>L</code> to indicate a &quot;thin&quot; layer over an
-existing component. For instance, we might call it <code>NaturalNumber1L</code> if the
-representation is one of the NaturalNumber classes that already exists in Java.
-Alternatively, you are welcome to be more explicit in your naming conventions.
-For example, if we implement NaturalNumber on an array, we might call it
-<code>NaturalNumberOnArray</code>. This more closely mirrors the naming style seen in the
-Java Collections Framework, such as <code>HashSet</code> vs. <code>TreeSet</code>. In any case, the
-implementation should have the following form:</p>
-<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NaturalNumber1L</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">NaturalNumberSecondary</span> </span>{
-   ...
-}
-</div></code></pre>
-<p>As a reminder, the kernel implementation should only contain implementations
-of the kernel and Standard methods. You may also implement the Iterable methods
-at this point. Likewise, you will need to define at least one constructor.
-Finally, you <strong>must</strong> specify the convention and correspondence at the top
-of the file. Feel free to reference any of your kernel implementations for
-examples of these.</p>
+<p>By now, you should have an entire component implemented at all levels. For
+example, you should have two interfaces, an abstract class, and a kernel
+implementation.</p>
+<p>Now, we want you to start producing your actual portfolio. To do that, you
+need to do a few things first:</p>
+<ol>
+<li><strong>You need to add testing</strong>: tests can be written basically as soon as you
+have designed your interfaces. Of course, because of how many changes your
+design has probably had up to this point, writing tests that early may lead
+to a lot of rework. Therefore, there is no better time to start testing than
+now that you have something more concrete.</li>
+<li><strong>You need to share some use cases</strong>: while having an API is useful, it's
+not always clear how and why someone would use it. Therefore, you should
+probably replicate some of the proof-of-concept work you did previously
+using your complete component.</li>
+<li><strong>You need to publish your work</strong>: if you haven't yet already, now would
+be a good time to publish your component to a public repo like GitHub.</li>
+</ol>
+<p>These are the three main tasks we want you to complete to round out your
+portfolio project. However, there are tons of ways to take your work to the next
+level, such as:</p>
+<ol>
+<li><strong>Publish your documentation</strong>: one of the perks of using JUnit is that you
+can directly convert all those comments you made in your code to HTML
+files that can be hosted as Java documentation. How do you think the OSU
+API works?</li>
+<li><strong>Start a CI pipeline</strong>: it's very likely that you won't touch your component
+again after this class. That said, maybe you want to actual publish your
+component to a dependency manager like Maven. If so, it's a good idea to
+setup some automated testing and deployment through &quot;Continuous Integration.&quot;
+GitHub Actions is a common tool for this, so why not look into it?</li>
+<li><strong>Track version history</strong>: in the world of software development, it's very
+important that you version your API with a version number. There are many
+different techniques for versioning software, but a date-based system is
+pretty easy. If you release your component on a particular date, use that
+date as the version number. Alternatively, you can make use of other
+techniques like semantic versioning.</li>
+</ol>
+<p>Many of these additional techniques are somewhat out of the scope of this
+course, but just knowing about them could set you up for long term success.</p>
 <h2 id="assignment-checklist">Assignment Checklist</h2>
 <p>To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -446,61 +459,46 @@ assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
 project. Specifically, students should be able to:</p>
 <ol>
-<li>Select a reasonable representation for a kernel implementation</li>
-<li>Provide a representation invariant (i.e., convention) and abstraction
-function (i.e., correspondence) for a kernel implementation</li>
-<li>Carry out kernel and Standard method implementations as well as constructor
-implementations given a contract, a convention, and a correspondence</li>
+<li>Design a test plan for a software sequence component</li>
+<li>Provide example use cases of a software sequence component</li>
+<li>Use version control software to share a repository of code</li>
+<li>Reflect on the software development process and the individual's own growth</li>
 </ol>
 <h2 id="assignment-rubric">Assignment Rubric</h2>
-<p>Again, to be completely transparent, most of the portfolio project, except the
-final submission, is designed as a formative assessment. Formative assessments
-are meant to provide ongoing feedback in the learning process. Therefore,
-the rubric is designed to assess the learning objectives <em>directly</em> in a way
-that is low stakes—meaning you shouldn't have to worry about the grade. Just
-do good work.</p>
+<p>Unlike previous parts of the portfolio project, in this part of the project,
+you'll receive a summative assessment, which usually involves a more critical
+lens. In other words, at this stage, we're expecting you to demonstrate some
+mastery of the material. See the rubric items for specifics.</p>
 <ol>
-<li>(3 points) In this assignment, you must select a representation for your
-kernel implementation and justify it. Remember that there are a variety of
-reasons for selecting a particular representation, but a good start is to
-choose one that would be easy to work with. Also, remember that part of
-selecting a representation is also explaining which configurations are valid
-and how the representation will be interpreted.</li>
-<li>(3 points) In the source code, you must provide that actual convention and
-correspondence that you may have discussed below. There is no expectation
-that either the convention or correspondence are written using mathematical
-notation.</li>
-<li>(4 points) The kernel implementation must have implementations for all kernel
-and Standard methods as well as at least one constructor. Everything you have
-learned this semester about kernel implementations could reasonably be
-assessed here, such as remembering to use a <code>createNewRep()</code> method wherever
-a fresh representation is needed or respecting the kernel purity rule.</li>
+<li>(15 points) All component methods must be tested including the Standard,
+kernel, and secondary methods. The format of testing will be different from
+the style used in the course because it is unlikely that you will have an
+existing component to test against (more on this below).</li>
+<li>(10 points) There must be at least two different sample codes provided that
+show how the component might be used. For example, consider how <code>XMLTree</code>
+was used to create the <code>RSSReader</code> and the <code>RSSAggregator</code>. There is no
+expectation that you provide samples to this much depth, but two files
+with at least a main method would be excellent.</li>
+<li>(15 points) As you work through these finishing touches, take a moment to
+reflect on the software development process. There are reflection prompts
+below. You should also reflect on your growth as a developer and share
+details about what you've learned.</li>
+<li>(10 points) The overall component must exhibit a high level of polish.
+Because all previous parts of this assignment are meant to be formative,
+assessments were generally charitable. In this phase, you should submit
+a component as if you were a professional software engineer. Follow good
+practices like using good variable names, documenting your methods, and
+overall adhering to the discipline.</li>
 </ol>
 <h2 id="pre-assignment-tasks">Pre-Assignment Tasks</h2>
-<blockquote>
-<p>While you're nearing the end of a complete component implementation, there are
-still a few challenging questions to answer. The one we will be focusing on
-right now is the choice of representation. In other words, how do you plan
-to model your component using other data structures? For the first time this
-semester, you will be selecting your own representation, and you will be
-defining your own convention and correspondence for this representation.
-Rather than jumping into the code, take a moment to actually select that
-representation now and justify it. Feel free to also use this space to
-discuss how that representation will be restricted (i.e., by convention)
-and interpreted (i.e., by correspondence).</p>
-</blockquote>
-<!-- TODO: select a representation and explain why -->
-<p>I would represent my class with a mix of string and double because there are many
-information in my bank account, and using sequence I could store all of them together.</p>
-<blockquote>
-<p>To start making your kernel implementation, make a branch off of main in your
-new repo called something like <code>kernel-implementation</code>. There are many ways to
-do this, but my preference is to use GitHub Desktop. From there, you can click
-the <code>Branch</code> tab, select <code>New branch</code>, and name your new branch.
-Alternatively, VSCode has its own GUI for git. You can also make use of the
-command line directly in VSCode to run git commands. It's entirely up to you.
-Regardless of your choice, we'll want a branch that you can later make a pull
-request from with all your changes.</p>
+<p>To finish your component, make a branch off of main in your new repo called
+something like <code>finishing-touches</code>. There are many ways to do this, but my
+preference is to use GitHub Desktop. From there, you can click the <code>Branch</code>
+tab, select <code>New branch</code>, and name your new branch. Alternatively, VSCode has
+its own GUI for git. You can also make use of the command line directly in
+VSCode to run git commands. It's entirely up to you. Regardless of your choice,
+we'll want a branch that you can later make a pull request from with all
+your changes.</p>
 <p><strong>Note</strong>: because you may have changes still sitting in a pull request,
 you'll want to make this new branch directly from main. This may seem weird
 because you won't be able to see the other parts (e.g., your proof of concept)
@@ -511,20 +509,211 @@ merges, you will need to pull the changes from main into your current branch
 to see them. If you don't like this workflow, you may try following the
 rebase strategies described <a href="https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr">here</a>
 and <a href="https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request">here</a>.</p>
-</blockquote>
 <h2 id="assignment-tasks">Assignment Tasks</h2>
-<p>Your primary task for this assignment is to create a kernel implementation that
-falls from your design up to this point. Since you have done this several times
-in the past, there should be no surprises about what goes into a kernel
-implementation. However, writing the convention and correspondence is a new
-expectation, so take same time to complete the pre-assignment above first.</p>
-<p>As with the previous assignments, you will share no code here. Instead, create
-your kernel implementation file in <code>src</code>, and follow the submission instructions
-below.</p>
+<p>Your primary task for this assignment is to polish up your code and get it
+ready to publish. To do that, you are being tasked with testing all of your
+existing code. You are also being tasked with coming up with at least two
+samples of your component being used for something. When all is said and done,
+you will publish your component to an open-source repository of your choosing.</p>
+<h3 id="testing">Testing</h3>
+<p>As a part of testing your code, you will need to create a couple test files
+in the <code>test</code> directory. One of the files will be the JUnit test file for the
+kernel. Meanwhile, the other file will be the JUnit test file for the abstract
+class.</p>
+<p>Unlike throughout the semester, testing will not involve testing against
+a reference implementation. As a result, testing is a bit messier and will
+involve calling kernel methods to check state. For example, here is a test
+case for one of the getters in NaturalNumber:</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testIsZero</span><span class="hljs-params">()</span> </span>{
+    NaturalNumber n = <span class="hljs-keyword">new</span> NaturalNumber1L();
+    assertEquals(<span class="hljs-keyword">true</span>, n.isZero());
+}
+</div></code></pre>
+<p>Note that this kind of testing is not as effective as the reference testing
+because it doesn't verify the entirety of the number's state. For example,
+it's possible that <code>n.isZero()</code> somehow changes the state of <code>n</code>. By only
+verifying the boolean value, there's no way of knowing if the remaining
+number is still intact. Therefore, it's probably better to write a test
+as follows:</p>
+<pre class="hljs"><code><div><span class="hljs-meta">@Test</span>
+<span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">testGetXOne</span><span class="hljs-params">()</span> </span>{
+    NaturalNumber n = <span class="hljs-keyword">new</span> NaturalNumber1L();
+    NaturalNumber nCopy = <span class="hljs-keyword">new</span> NaturalNumber1L();
+    assertEquals(<span class="hljs-keyword">true</span>, n.isZero());
+    assertEquals(nCopy, n);
+}
+</div></code></pre>
+<p>At least that way, you know the number is unchanged (i.e., <code>isZero()</code> properly
+restored <code>n</code>).</p>
+<h3 id="use-cases">Use Cases</h3>
+<p>Another requirement to finish the project is to provide a couple of use cases
+for your component. To do that, the only expectation is that you generate
+two Java files in <code>src</code> with example code using your component either as part of
+the representation of some other proof-of-concept component or directly in
+<code>main</code>. For instance, the following class would be a extremely minimal example
+of how NaturalNumber might be used as part of a representation:</p>
+<pre class="hljs"><code><div><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WholeNumber</span> </span>{
+
+    <span class="hljs-keyword">private</span> NaturalNumber n;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">WholeNumber</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
+       <span class="hljs-keyword">assert</span> n &gt;= <span class="hljs-number">0</span> : <span class="hljs-string">"Violation of: n &gt;= 0"</span>;
+       <span class="hljs-keyword">this</span>.n = <span class="hljs-keyword">new</span> NaturalNumber1L(n);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">countUp</span><span class="hljs-params">()</span> </span>{
+       <span class="hljs-keyword">this</span>.n.increment();
+    }
+}
+</div></code></pre>
+<h3 id="polish">Polish</h3>
+<p>Overall polish involves a variety of efforts to demonstrate code quality.
+One of which would be directory structure. As an example, I would recommend
+that your directories look as follows before submission:</p>
+<pre class="hljs"><code><div>│   .gitattributes
+│   .gitignore
+│   LICENSE
+│   README.md
+│
+├───.vscode
+│       extensions.json
+│       osu-cse-checkstyle-config.xml
+│       osu-cse-formatter.xml
+│       settings.json
+│
+├───doc
+│   │   README.md
+│   │
+│   ├───01-component-brainstorming
+│   │       01-component-brainstorming.md
+│   │
+│   ├───02-component-proof-of-concept
+│   │       02-component-proof-of-concept.md
+│   │
+│   ├───03-component-interfaces
+│   │       03-component-interfaces.md
+│   │
+│   ├───04-component-abstract-class
+│   │       04-component-abstract-classes.md
+│   │
+│   ├───05-component-kernel-implementation
+│   │       05-component-kernel-implementation.md
+│   │
+│   └───06-component-finishing-touches
+│           06-component-finishing-touches.md
+│
+├───lib
+│       components.jar
+│       hamcrest-core-1.3.jar
+│       junit-4.13.2.jar
+│       README.md
+│
+├───src
+│   │   NaturalNumberDemo.java
+│   │   README.md
+│   │   WholeNumber.java
+│   │
+│   └───components
+│       └───naturalnumber
+│                       NaturalNumber.java
+│                       NaturalNumber1L.java
+│                       NaturalNumberKernel.java
+│                       NaturalNumberSecondary.java
+│
+└───test
+    │   README.md
+    │
+    └───components
+        └───naturalnumber
+                        NaturalNumber1LTest.java
+                        NaturalNumberTest.java
+</div></code></pre>
+<p>In addition, you'll want to take into account everything you've learned over
+the last two semesters to ensure your code is of good quality. That includes
+but is not limited to documenting your methods with parameter modes, giving your
+variables good names, making good use of whitespace, respecting CheckStyle, and
+just generally not taking shortcuts. Ultimately, you should be incorporating
+the feedback you've received throughout this process into your final product.
+<strong>Have some pride in your work!</strong></p>
 <h2 id="post-assignment-tasks">Post-Assignment Tasks</h2>
 <p>The following sections detail everything that you should do once you've
 completed the assignment.</p>
+<h3 id="reflection">Reflection</h3>
+<p>Now that you have created a software component from scratch, it's time to
+reflect on that process as well as take some time to think about your
+growth as a developer. Below, you will find a series of reflection prompts.
+Take some time to fill them out honestly.</p>
+<blockquote>
+<p>A common gripe that students express is how much they feel the work they do
+in class fails to map to the real world. Now that you've had a chance to
+complete the portfolio project, how much better (or worse) do you think you
+understand software development and why?</p>
+</blockquote>
+<!-- TODO: discuss -->
+<p>Yes, I feel I have a much more understanding of a software development. Eventhough
+it's just a small program, but it step by step being build in my hand. I feel
+accomplish and happy, because I think I could actually do something.</p>
+<blockquote>
+<p>Also, did the portfolio project surface any gaps in your own knowledge of
+software development. If so, what are those gaps and how did you address them?</p>
+</blockquote>
+<!-- TODO: discuss -->
+<p>Yes, it help me summarize the knowledge that I have, and it also help me organize
+information in my brain.</p>
+<blockquote>
+<p>Finally, as a part of completing the portfolio project, to what extent has
+your perspective of software development changed, if at all? In other words,
+is software development something you still enjoy? If not, why not?</p>
+</blockquote>
+<!-- TODO: discuss -->
+<p>Before coming to this class I don't really have a understanding of how a
+software is made. I feel that is very far from me eventhough we are
+always doing project in class. But though this profolio project I feel much more
+confident on what I am doing. And start to understand if I continue this path
+what will it be like.</p>
+<blockquote>
+<p>One of the challenges of completing the portfolio project is picking up a lot
+of skills on your own. Some of these skills are, of course, software skills.
+However, there are plenty of other skills you may have picked up through
+this process. Therefore, the first question is what skills did you pick up
+through this process?</p>
+</blockquote>
+<!-- TODO: discuss -->
+<p>I think the research skill is very important. Using only lecture note or project
+it's very hard to finish this portfolio. I always need to dig in to the course
+material and internet and try to find what actually should I write in this
+portfolio.</p>
+<blockquote>
+<p>The follow-up question is: could you rephrase these skills you picked up
+as bullet points that you could put on a resume? Try it below.</p>
+</blockquote>
+<!-- TODO: discuss -->
+<p>-design and program a complete BankAccount component
+-design test case to test the component
+-write a example of how component could be use</p>
+<blockquote>
+<p>Next, how has working on this project affected your career trajectory?
+In other words, do you now hate the topic you picked? Or, are you even more
+interested in it? Both outcomes are valuable to your personal development.</p>
+</blockquote>
+<!-- TODO: discuss -->
+<p>I think I am being more interested in this kind of things. Because I feel it's
+very interested to design a whole component and finish it part by part. Especially,
+at the end I see it could sucessfully run. I think this is a very valuable experience.</p>
+<blockquote>
+<p>Finally, consider the skills you've picked up and your current career
+trajectory. What are some things you could do to continue on your
+career trajectory? Also, who are some mentors you could contact to help
+you stay on your path?</p>
+</blockquote>
+<!-- TODO: discuss -->
+<p>I still need to have a better understanding of different part of this component.
+I always feel very confuse about what actually am I doing, and how it will
+contribute to this project. I beileve this will motivate me and help me continue
+my path</p>
 <h3 id="changelog">Changelog</h3>
+<!-- TODO: update CHANGELOG then delete this comment -->
 <p>At the end of every assignment, you should update the
 <a href="../../CHANGELOG.md">CHANGELOG.md</a> file found in the root of the project folder.
 Here's what I would expect to see at the minimum:</p>
@@ -540,11 +729,12 @@ the following form: YYYY.0M.0D.
 
 <span class="hljs-section">### Added</span>
 <span class="hljs-bullet">
-- </span>Designed kernel implementation for BankAccount component
+- </span>Designed test suite for BankAccount component
+<span class="hljs-bullet">- </span>Designed two different use cases for BankAccount component
 
 <span class="hljs-section">### Updated</span>
 <span class="hljs-bullet">
-- </span>Changed design to include the actual kernel and standard method
+- </span>Changed design to include the test case of bankaccount
 
 </div></code></pre>
 <p>Here <code>2024.12.3</code> would be the date of your submission, such as 2024.04.21.</p>
@@ -558,7 +748,7 @@ request of all your changes. Pull requests are pretty easy to make if you're
 using GitHub Desktop. Just click the <code>Branch</code> tab and select
 <code>Create pull request</code>. This should pull up your browser with the pull request
 form ready to complete. Give your pull request a good title like &quot;Completed Part
-5 of the Portfolio Project&quot; and briefly describe what you've done. Then, click
+6 of the Portfolio Project&quot; and briefly describe what you've done. Then, click
 &quot;Create pull request&quot;.</p>
 <p>If all goes well, you should have a pull request that you can submit to Carmen
 via its URL. The URL should be in the form:

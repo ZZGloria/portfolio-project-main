@@ -9,6 +9,7 @@ public interface BankAccount extends BankAccountKernel {
      *            the {@code password} of the account you want to take money
      *            from
      * @updates this
+     * @return the money in your account
      * @requires {this.money >= k}
      * @ensures this = #this - k if password is correct
      */
@@ -21,6 +22,7 @@ public interface BankAccount extends BankAccountKernel {
      *            the {@code double} to be add to money
      * @updates this
      * @requires {@code k >= 0}
+     * @return the money in your account
      * @ensures this = #this + k
      */
     double deposit(double k);
@@ -36,6 +38,7 @@ public interface BankAccount extends BankAccountKernel {
      *            the {@code password} of the account you want to take money
      *            from
      * @updates this, account.this
+     * @return The remaining money in your account
      * @requires {this.money >= k}
      * @ensures this = #this - k if password is correct account.this =
      *          #account.this + k
@@ -44,7 +47,7 @@ public interface BankAccount extends BankAccountKernel {
 
     /**
      * check whether the input {@code firstName} match {@code this.FirstName}
-     * and {@code lastName} match {@code this.LastName}
+     * and {@code lastName} match {@code this.LastName}.
      *
      * @param first
      *            the {@code string} firstName to be check
@@ -56,25 +59,5 @@ public interface BankAccount extends BankAccountKernel {
      *         this.LastName, false otherwise
      */
     boolean checkName(String first, String last);
-
-    /**
-     * check whether two account are equal
-     *
-     * @param account
-     *            the account to be check
-     * @requires {@code account != null} {@code account != null}
-     * @return true if account are equal false other wise
-     */
-    boolean equals(BankAccount account);
-
-    /**
-     * return the name,password and balance
-     *
-     * @param password
-     *            the password of account
-     * @requires {@code account != null} {@code account != null}
-     * @return name,password and balance
-     */
-    String toString(int password);
 
 }

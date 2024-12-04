@@ -37,6 +37,7 @@ public class BankAccount1 extends BankAccountSecondary {
     /**
      * Representation of {@code this}.
      */
+
     private double money;
 
     private String firstName;
@@ -50,7 +51,6 @@ public class BankAccount1 extends BankAccountSecondary {
      */
     private void createNewRep() {
 
-        // TODO - fill in body
         this.money = 0;
         this.firstName = null;
         this.lastName = null;
@@ -66,7 +66,7 @@ public class BankAccount1 extends BankAccountSecondary {
         assert FirstName != null : "Violation of: FirstName is not null";
         assert LastName != null : "Violation of: LastName is not null";
         assert 100000 <= password : "Violation of password need to be at least 6 digit";
-        assert 10000000 >= password : "Violation of password need to be at most 8 digit";
+        assert 99999999 >= password : "Violation of password need to be at most 8 digit";
 
         this.createNewRep();
         this.firstName = FirstName.toLowerCase();
@@ -87,7 +87,7 @@ public class BankAccount1 extends BankAccountSecondary {
      */
     @Override
     public double subtract(double k) {
-        this.money -= k;
+        this.money = this.money - k;
         return this.money;
     }
 
@@ -155,7 +155,7 @@ public class BankAccount1 extends BankAccountSecondary {
      * @return this.lastName
      */
     @Override
-    public String LastName() {
+    public String lastName() {
         return this.lastName;
     }
 

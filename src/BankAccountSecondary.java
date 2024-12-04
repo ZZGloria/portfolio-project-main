@@ -71,7 +71,7 @@ public abstract class BankAccountSecondary implements BankAccount {
 
     /**
      * check whether the input {@code firstName} match {@code this.FirstName}
-     * and {@code lastName} match {@code this.LastName}
+     * and {@code lastName} match {@code this.LastName}.
      *
      * @param first
      *            the {@code string} firstName to be check
@@ -84,40 +84,24 @@ public abstract class BankAccountSecondary implements BankAccount {
      */
     @Override
     public boolean checkName(String first, String last) {
-        return this.checkFirstName(first) & this.checkLastName(last);
+        return this.checkFirstName(first) && this.checkLastName(last);
     }
 
-    /**
-     * check whether two account are equal
-     *
-     * @param account
-     *            the account to be check
-     * @requires {@code account != null} {@code account != null}
-     * @return true if account are equal false other wise
-     */
     @Override
-    public boolean equals(BankAccount account) {
-        return this.checkName(account.firstName(), account.LastName())
-                & this.subtract(0) == account.subtract(0);
+    public boolean equals(Object o) {
+        BankAccount account = (BankAccount) o;
+        boolean balance = Math
+                .abs(this.subtract(0) - account.subtract(0)) <= 0.009;
+        return this.checkName(account.firstName(), account.lastName())
+                && balance;
 
     }
 
-    /**
-     * return the name,password and balance
-     *
-     * @param password
-     *            the password of account
-     * @requires {@code account != null} {@code account != null}
-     * @return name,password and balance
-     */
     @Override
-    public String toString(int password) {
+    public String toString() {
         String information = "";
-        if (this.checkPassWord(password)) {
-            information = "name:" + this.firstName() + " " + this.LastName();
-            information += "password:" + password;
-            information += "balance:" + this.subtract(0);
-        }
+        information = "name:" + this.firstName() + " " + this.lastName();
+        information += "balance:" + this.subtract(0);
         return information;
 
     }

@@ -1,3 +1,5 @@
+import components.standard.Standard;
+
 /**
  * Bank Account kernel component with primary methods. (Note: by package-wide
  * convention, all references are non-null.)
@@ -64,7 +66,7 @@ public interface BankAccountKernel extends Standard<BankAccount> {
     double add(double k);
 
     /**
-     * check whether the input {@code pass} match {@code this.password}
+     * check whether the input {@code pass} match {@code this.password}.
      *
      * @param pass
      *            the {@code int} password to be check
@@ -75,7 +77,7 @@ public interface BankAccountKernel extends Standard<BankAccount> {
     boolean checkPassWord(int pass);
 
     /**
-     * check whether the input {@code firstName} match {@code this.FirstName}
+     * check whether the input {@code firstName} match {@code this.FirstName}.
      *
      * @param firstName
      *            the {@code string} firstName to be check
@@ -86,25 +88,25 @@ public interface BankAccountKernel extends Standard<BankAccount> {
     boolean checkFirstName(String firstName);
 
     /**
-     * check whether the input {@code LastName} match {@code this.LastName}
+     * check whether the input {@code LastName} match {@code this.LastName}.
      *
-     * @param LastName
+     * @param lastName
      *            the {@code string} LastName to be check
      * @requires {@code LastName != null}
      * @ensures LastName.equals(this.LastName)
      * @return true if LastName matches this.LastName, false otherwise
      */
-    boolean checkLastName(String LastName);
+    boolean checkLastName(String lastName);
 
     /**
-     * return the lastName
+     * return the lastName.
      *
      * @return this.lastName
      */
-    String LastName();
+    String lastName();
 
     /**
-     * return the firstName
+     * return the firstName.
      *
      * @return this.firstName
      */

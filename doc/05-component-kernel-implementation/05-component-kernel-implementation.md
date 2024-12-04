@@ -111,7 +111,6 @@ do good work.
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
 I would represent my class with a mix of string and double because there are many
 information in my bank account, and using sequence I could store all of them together.
 
